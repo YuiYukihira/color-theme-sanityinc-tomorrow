@@ -41,6 +41,7 @@
 ;;     M-x color-theme-sanityinc-tomorrow-blue
 ;;     M-x color-theme-sanityinc-tomorrow-bright
 ;;     M-x color-theme-sanityinc-tomorrow-eighties
+;;     M-x color-theme-sanityinc-tomorrow-arc
 ;;
 ;;; Credit:
 
@@ -128,14 +129,29 @@ executed."
                (green . "#b9ca4a")
                (aqua . "#70c0b1")
                (blue . "#7aa6da")
-               (purple . "#c397d8")))))
+               (purple . "#c397d8")))
+    (arc . ((background . "#2f343f")
+            (alt-background . "#333333333333")
+            (current-line . "#434b5b")
+            (selection . "#515151")
+            (foreground . "#eaeaea")
+            (comment . "969896")
+            (red . "#b74747")
+            (orange . "#ff9728")
+            (yellow . "#ff9e00")
+            (green . "#60fc00")
+            (aqua . "#4cffff")
+            (blue . "#305dff")
+            (purple . "#ff3dd5")
+            ))))
+
 
 
 
 (defmacro color-theme-sanityinc-tomorrow--with-colors (mode &rest body)
   "Execute `BODY' in a scope with variables bound to the various tomorrow colors.
 
-`MODE' should be set to either 'day, 'night, 'eighties, 'blue or 'bright."
+`MODE' should be set to either 'day, 'night, 'eighties, 'blue, 'bright or 'arc'."
   `(let* ((colors (or (cdr (assoc ,mode color-theme-sanityinc-tomorrow-colors))
                       (error "no such theme flavor")))
           (background   (cdr (assoc 'background colors)))
