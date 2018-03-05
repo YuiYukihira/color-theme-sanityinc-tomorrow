@@ -131,27 +131,36 @@ executed."
                (blue . "#7aa6da")
                (purple . "#c397d8")))
     (arc . ((background . "#2f343f")
-            (alt-background . "#333333333333")
+            (alt-background . "#ffffffffff")
             (current-line . "#434b5b")
-            (selection . "#515151")
-            (foreground . "#eaeaea")
-            (comment . "969896")
-            (red . "#b74747")
-            (orange . "#ff9728")
-            (yellow . "#ff9e00")
-            (green . "#60fc00")
-            (aqua . "#4cffff")
-            (blue . "#305dff")
-            (purple . "#ff3dd5")
-            ))))
-
-
-
+            (selection . "#3d4351")
+            (foreground . "#ffcced")
+            (comment . "#969896")
+            (red . "#f96161")
+            (orange . "#ffc8a8")
+            (yellow . "#ffeda8")
+            (green . "#caffa8")
+            (aqua . "#a8fff0")
+            (blue . "#a8c5ff")
+            (purple . "#ffa8bd")))
+    (pink . ((background . "#2f343f")
+             (alt-background . "#ffffffffff")
+             (current-line . "#434b5b")
+             (selection . "#3d4351")
+             (foreground . "#ffcced")
+             (comment . "#fe3fff")
+             (red . "#ffa8a8")
+             (orange . "#ffceb2")
+             (yellow . "#ffb2d2")
+             (green . "#ff9eae")
+             (aqua . "#ffa8dc")
+             (blue . "#ffadf8")
+             (purple . "#f0b7ff")))))
 
 (defmacro color-theme-sanityinc-tomorrow--with-colors (mode &rest body)
   "Execute `BODY' in a scope with variables bound to the various tomorrow colors.
 
-`MODE' should be set to either 'day, 'night, 'eighties, 'blue, 'bright or 'arc'."
+`MODE' should be set to either 'day, 'night, 'eighties, 'blue, 'bright or 'arc' or 'pink'."
   `(let* ((colors (or (cdr (assoc ,mode color-theme-sanityinc-tomorrow-colors))
                       (error "no such theme flavor")))
           (background   (cdr (assoc 'background colors)))
@@ -1331,6 +1340,17 @@ are bound."
   (interactive)
   (color-theme-sanityinc-tomorrow 'blue))
 
+;;;###autoload
+(defun color-theme-sanityinc-tomorrow-arc ()
+  "Apply the tomorrow arc theme."
+  (interactive)
+  (color-theme-sanityinc-tomorrow 'arc))
+
+;;;###autoload
+(defun color-theme-sanityinc-tomorrow-pink ()
+  "Apply the tomorrow pink theme."
+  (interactive)
+  (color-theme-sanityinc-tomorrow 'pink))
 
 (provide 'color-theme-sanityinc-tomorrow)
 
