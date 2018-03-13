@@ -155,12 +155,25 @@ executed."
              (green . "#ff9eae")
              (aqua . "#ffa8dc")
              (blue . "#ffadf8")
-             (purple . "#f0b7ff")))))
+             (purple . "#f0b7ff")))
+    (wal . ((background . "#<COLORIN>")
+	    (alt-background . "#ffffffffffff")
+	    (current-line . "#<COLOR15>")
+	    (selection . "#<COLORACT>")
+	    (foreground . "#<COLOR0>")
+	    (comment . "#<COLOR1>")
+	    (red . "#<COLOR1>")
+	    (orange . "#<COLOR2>")
+	    (yellow . "#<COLOR3>")
+	    (green . "#<COLOR4>")
+	    (aqua . "#<COLOR5>")
+	    (blue . "#<COLOR6>")
+	    (purple . "#<COLOR7>")))))
 
 (defmacro color-theme-sanityinc-tomorrow--with-colors (mode &rest body)
   "Execute `BODY' in a scope with variables bound to the various tomorrow colors.
 
-`MODE' should be set to either 'day, 'night, 'eighties, 'blue, 'bright or 'arc' or 'pink'."
+`MODE' should be set to either 'day, 'night, 'eighties, 'blue, 'bright or 'arc' or 'pink' or 'wal'."
   `(let* ((colors (or (cdr (assoc ,mode color-theme-sanityinc-tomorrow-colors))
                       (error "no such theme flavor")))
           (background   (cdr (assoc 'background colors)))
@@ -1351,6 +1364,11 @@ are bound."
   "Apply the tomorrow pink theme."
   (interactive)
   (color-theme-sanityinc-tomorrow 'pink))
+
+(defun color-theme-santifyinc-tomorrow-wal ()
+  "Apply the tomorrow wal theme."
+  (interactive)
+  (color-theme-sanityinc-tomorro 'wal))
 
 (provide 'color-theme-sanityinc-tomorrow)
 
