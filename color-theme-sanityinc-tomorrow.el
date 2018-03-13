@@ -1365,7 +1365,7 @@ are bound."
   (interactive)
   (color-theme-sanityinc-tomorrow 'pink))
 
-(defun color-theme-santifyinc-tomorrow-wal ()
+(defun color-theme-santityinc-tomorrow-wal ()
   "Apply the tomorrow wal theme."
   (interactive)
   (color-theme-sanityinc-tomorrow 'wal))
