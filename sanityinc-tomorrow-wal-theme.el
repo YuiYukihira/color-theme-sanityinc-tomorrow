@@ -1,2 +1,2 @@
 (require 'color-theme-sanityinc-tomorrow)
-(color-theme-sanityinc--define-theme wal)
+(color-theme-sanityinc-tomorrow--define-theme wal)
